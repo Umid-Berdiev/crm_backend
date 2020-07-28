@@ -23,15 +23,16 @@ class ParticipatingFinancialInstitution(models.Model):
     subsidiaryLoanConditions = models.IntegerField()
 
 class Beneficiary(models.Model):
-    ownershipForm = 
-    name = models.CharField(max_length=60)
-    activitySector = 
-    region = models.IntegerField()
-    district = models.IntegerField()
-    legalAddress = models.TextField()
-    numberOfEmployees = 
-    landArea = 
-    contactPerson = models.IntegerField() # relation: this belongs to User model
-    financingVolume = models.IntegerField()
-    subsidiaryLoanConditions = models.IntegerField()
+    pass
+    # ownershipForm = 
+    # name = models.CharField(max_length=60)
+    # activitySector = 
+    # region = models.IntegerField()
+    # district = models.IntegerField()
+    # legalAddress = models.TextField()
+    # numberOfEmployees = 
+    # landArea = 
+    # contactPerson = models.IntegerField() # relation: this belongs to User model
+    # financingVolume = models.IntegerField()
+    # subsidiaryLoanConditions = models.IntegerField()
 
