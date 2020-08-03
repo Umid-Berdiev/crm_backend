@@ -1,13 +1,15 @@
-from django.urls import include, path
-from rest_framework import routers
+from django.urls import path
 from . import views
+from rest_framework.urlpatterns import format_suffix_patterns
+from django.conf.urls import url, include
+from django.views import generic
+from rest_framework.schemas import get_schema_view
 
-router = routers.DefaultRouter()
-router.register(r'ifis', views.IFIViewSet)
-
-# Wire up our API using automatic URL routing.
-# Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('ifis/', views.IFIList.as_view()),
+    path('ifis/<int:pk>/', views.IFIDetail.as_view()),
+    path('current_user/', views.get_current_user),
+    path('users/create', views.CreateUserView.as_view()),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)

@@ -14,6 +14,7 @@ class InternationalFinancialInstitute(models.Model):
     additionalContactPersonPosition = models.CharField(max_length=50, blank=True)
     additionalContactPersonPhoneNumber = models.CharField(max_length=50, blank=True)
     additionalContactPersonEmail = models.CharField(max_length=50, blank=True)
+    owner = models.ForeignKey('auth.User', related_name='ifis', on_delete=models.CASCADE)
     
     def __str__(self):
         return self.name
